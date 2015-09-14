@@ -17,25 +17,27 @@
     <li ng-repeat="phone in phones">
 
       <!-- basic -->
-      <span>{{phone.name}}</span>
+      <span>{{phone.data1}}</span>
 
       <!-- attribute name, it will not bind the data -->
-      <span {{phone.name}}>{{phone.name}}</span>
+      <span {{phone.data2}}>{{phone.name}}</span>
 
       <!-- double-quoted attribute value, it will double quoted the attribute -->
-      <span class="{{phone.name}}">{{phone.name}}</span>
+      <span class="{{phone.data3}}">{{phone.name}}</span>
       <!-- single-quoted attribute value, it will double quoted the attribute -->
-      <span class='{{phone.name}}'>{{phone.name}}</span>
+      <span class='{{phone.data4}}'>{{phone.name}}</span>
       <!-- un-quoted attribute value, it will double quoted the attribute -->
-      <span class={{phone.name}}>{{phone.name}}</span>
+      <span class={{phone.data5}}>{{phone.name}}</span>
 
       <!-- double-quoted attribute value / CSS, it is vulnerable -->
-      <span style="{{phone.name}}">{{phone.name}}</span>
+      <span style="{{phone.data6}}">{{phone.name}}</span>
       <!-- double-quoted attribute value / CSS, it is vulnerable -->
-      <span style="color:{{phone.name}}">{{phone.name}}</span>
+      <span style="color:{{phone.data7}}">{{phone.name}}</span>
 
       <!-- double-quoted attribute value / URI, it will add unsafe: as prefix -->
-      <a href="{{phone.name}}">{{phone.name}}</a>
+      <a href="{{phone.data8}}">{{phone.name}}</a>
+      <!-- double-quoted attribute value / URI, it will add unsafe: as prefix -->
+      <a href="javascript:alert('{{phone.data9}}')">{{phone.name}}</a>
 
       <p>{{phone.snippet}}</p>
     </li>
